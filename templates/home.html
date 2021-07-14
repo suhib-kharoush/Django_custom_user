@@ -1,0 +1,20 @@
+<body style="background-image: url(https://media.gettyimages.com/photos/abstract-digital-network-communication-picture-id1149365028?k=6&m=1149365028&s=612x612&w=0&h=q4C8xGVhNXhWj1uWsVOI6eKhiFNBdllpKbu_vmX5rXA=);">
+    
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+ <h2 style="color: aqua;"> Hi {{ user.username }}!</h2>
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+<div style="flex-direction: row; flex-wrap: wrap; text-align: center;">
+  <p style="color: aqua;">You are not logged in</p>
+  <a href="{% url 'login' %}"><button>Log In</button></a> |
+  <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+</div>
+{% endif %}
+{% endblock %}
+</body>
