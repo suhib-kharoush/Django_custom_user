@@ -11,7 +11,7 @@ class userTests(TestCase):
 
     def test_user_creation(self):
         email = self.users.email
-        self.assertEquals(self.users.__str__(), "Suhaib")
+        self.assertEquals(self.users.username.__str__(), "Suhaib")
         self.assertEquals(self.users.email.__str__(), "suhaib_kharwash@outlook.com")
 
     def test_duplicates(self):
